@@ -1,6 +1,7 @@
 import { ComponentType } from "react";
 import Taro, { Component, Config } from "@tarojs/taro";
 import { View } from "@tarojs/components";
+import { List } from "../../components";
 import { AtTabs, AtTabsPane } from "taro-ui";
 import "./index.scss";
 
@@ -21,7 +22,50 @@ class Index extends Component<PageState> {
   };
 
   state = {
-    current: 0
+    current: 0,
+    list: [
+      {
+        id: 1,
+        type: "video",
+        videoSrc:
+          "https://mmbiz.qpic.cn/mmbiz_gif/kUlnnAfBltIp0uibju80ibvg9aOQgpc3SGuIlHFW5OOuk6hZjB2ztMAwDhBP3bia8poeHPamI3twGQ0ZI1Q1f6Mfg/640?wx_fmt=gif",
+        user: {
+          avatar:
+            "http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELRCAuvsJhor4iaR8iaU7EfdibY6conib5B1xtze9PRnDOf3jxPBiaklCsR9pVx1TBTgd3R1umElDZ54vvBObBU3osQ1mFM4HbEhoGA/132",
+          id: 156,
+          nickname: "山的那边"
+        },
+        view_number: 22543,
+        comment_number: 10
+      },
+      {
+        id: 2,
+        type: "graphic",
+        imgSrc: "http://mpic.spriteapp.cn/ugc/2019/08/30/5d68689f2126d.gif",
+        user: {
+          avatar:
+            "http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELRCAuvsJhor4iaR8iaU7EfdibY6conib5B1xtze9PRnDOf3jxPBiaklCsR9pVx1TBTgd3R1umElDZ54vvBObBU3osQ1mFM4HbEhoGA/132",
+          id: 156,
+          nickname: "山的那边"
+        },
+        view_number: 22543,
+        comment_number: 10
+      },
+      {
+        id: 3,
+        type: "text",
+        content:
+          "测试测试萨达是大所多撒大萨达阿斯顿撒打死打死打死安达市打死打死多奥术大师大叔大婶大叔大婶安达市奥术大师大萨达所大萨达撒大所大萨达所打撒所多阿萨德奥术大师打断阿达打死",
+        user: {
+          avatar:
+            "http://thirdwx.qlogo.cn/mmopen/PiajxSqBRaELRCAuvsJhor4iaR8iaU7EfdibY6conib5B1xtze9PRnDOf3jxPBiaklCsR9pVx1TBTgd3R1umElDZ54vvBObBU3osQ1mFM4HbEhoGA/132",
+          id: 156,
+          nickname: "山的那边"
+        },
+        view_number: 22543,
+        comment_number: 10
+      }
+    ]
   };
 
   componentWillMount() {}
@@ -54,19 +98,13 @@ class Index extends Component<PageState> {
           onClick={this.handleClick.bind(this)}
         >
           <AtTabsPane current={this.state.current} index={0}>
-            <View style="widht:100%;height:100%;background-color: #FAFBFC;">
-              推荐
-            </View>
+            <List objAry={this.state.list} />
           </AtTabsPane>
           <AtTabsPane current={this.state.current} index={1}>
-            <View style="padding: 100px 50px;background-color: #FAFBFC;text-align: center;">
-              图文
-            </View>
+            <List objAry={this.state.list} />
           </AtTabsPane>
           <AtTabsPane current={this.state.current} index={2}>
-            <View style="padding: 100px 50px;background-color: #FAFBFC;text-align: center;">
-              段子
-            </View>
+            <List objAry={this.state.list} />
           </AtTabsPane>
         </AtTabs>
       </View>

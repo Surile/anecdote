@@ -4,6 +4,6 @@ import "./index.scss";
 
 export default class Video extends Component {
   render() {
-    return <View className="container">视频</View>;
+    return <View className="container">视频111</View>;
   }
 }

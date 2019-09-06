@@ -1,12 +1,14 @@
+@import '../../assets/style/colors.scss';
+
 .at-tabs__item {
   font-size: 32px;
   font-weight: 600;
 }
 
 .at-tabs__item--active {
-  color: #794f00;
+  color: $color-brand;
 
   .at-tabs__item-underline {
-    background-color: #794f00;
+    background-color: $color-brand;
   }
 }
